@@ -21,7 +21,7 @@ public class AppConfig {
     }
 
     @Bean
-    @Scope("prototype")
+//    @Scope("prototype")
     public OrderService orderService(){
         return new OrderService(paymentGateway.equals("paypal") ? paypal() : stripe());
     }
