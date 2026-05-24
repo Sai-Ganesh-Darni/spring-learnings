@@ -9,3 +9,7 @@ stripe:
   supported-currencies: IND,   USD, EUR
 
 payment-gateway: paypal
+
+user-service:
+  notification-service: email
+  user-repo: in-memory

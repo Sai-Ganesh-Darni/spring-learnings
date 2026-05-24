@@ -10,13 +10,19 @@ public class StoreApplication {
 
 	public static void main(String[] args) {
 		ConfigurableApplicationContext context = SpringApplication.run(StoreApplication.class, args);
-        var orderService = context.getBean(OrderService.class);
+//        var orderService = context.getBean(OrderService.class);
 //        var orderService2 = context.getBean(OrderService.class);
-        orderService.placeOrder();
+//        orderService.placeOrder();
 //        var notficationManager = context.getBean(NotificationManager.class);
 //        notficationManager.sendNotification("Hello");
 //        var heavyResource = context.getBean(HeavyResource.class);
-        context.close();
+//        context.close();
+        var userService = context.getBean(UserService.class);
+        User newUser = new User(1234, "saiganesh@gmail.com", "hash123", "Sai Ganesh");
+        userService.registerUser(newUser);
+        User newUser2 = new User(12314, "saiganesh1@gmail.com", "hash123", "Sai Ganesh");
+        userService.registerUser(newUser2);
+        userService.getUsers();
 	}
 
 }
