@@ -13,6 +13,7 @@ public class StoreApplication {
         orderService.placeOrder();
 //        var notficationManager = context.getBean(NotificationManager.class);
 //        notficationManager.sendNotification("Hello");
+          var heavyResource = context.getBean(HeavyResource.class);
 	}
 
 }
