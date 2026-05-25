@@ -16,13 +16,14 @@ public class StoreApplication {
 //        var notficationManager = context.getBean(NotificationManager.class);
 //        notficationManager.sendNotification("Hello");
 //        var heavyResource = context.getBean(HeavyResource.class);
-//        context.close();
-        var userService = context.getBean(UserService.class);
-        User newUser = new User(1234, "saiganesh@gmail.com", "hash123", "Sai Ganesh");
-        userService.registerUser(newUser);
-        User newUser2 = new User(12314, "saiganesh1@gmail.com", "hash123", "Sai Ganesh");
-        userService.registerUser(newUser2);
-        userService.getUsers();
+
+//        var userService = context.getBean(UserService.class);
+//        User newUser = new User(1234, "saiganesh@gmail.com", "hash123", "Sai Ganesh");
+//        userService.registerUser(newUser);
+//        User newUser2 = new User(12314, "saiganesh1@gmail.com", "hash123", "Sai Ganesh");
+//        userService.registerUser(newUser2);
+//        userService.getUsers();
+        context.close();
 	}
 
 }
