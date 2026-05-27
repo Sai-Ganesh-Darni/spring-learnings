@@ -1,5 +1,6 @@
 package com.learning.store;
 
+import com.learning.store.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -9,21 +10,17 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class StoreApplication {
 
 	public static void main(String[] args) {
-		ConfigurableApplicationContext context = SpringApplication.run(StoreApplication.class, args);
-//        var orderService = context.getBean(OrderService.class);
-//        var orderService2 = context.getBean(OrderService.class);
-//        orderService.placeOrder();
-//        var notficationManager = context.getBean(NotificationManager.class);
-//        notficationManager.sendNotification("Hello");
-//        var heavyResource = context.getBean(HeavyResource.class);
+//        ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
+//        User user = new User(1L, "Sai", "saiganesh@gmail.com", "pwd123");
+        var user  = User
+                .builder()
+                .name("Sai")
+                .id(1L)
+                .email("saiganesh@gmail.com")
+                .password("pwd123")
+                .build();
 
-//        var userService = context.getBean(UserService.class);
-//        User newUser = new User(1234, "saiganesh@gmail.com", "hash123", "Sai Ganesh");
-//        userService.registerUser(newUser);
-//        User newUser2 = new User(12314, "saiganesh1@gmail.com", "hash123", "Sai Ganesh");
-//        userService.registerUser(newUser2);
-//        userService.getUsers();
-        context.close();
+
 	}
 
 }
