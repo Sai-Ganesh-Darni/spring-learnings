@@ -1,5 +1,6 @@
 package com.learning.store;
 
+import com.learning.store.entities.Address;
 import com.learning.store.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -19,6 +20,20 @@ public class StoreApplication {
                 .email("saiganesh@gmail.com")
                 .password("pwd123")
                 .build();
+
+        var address = Address
+                .builder()
+                .city("city")
+                .state("state")
+                .zip("zip")
+                .street("street")
+                .build();
+
+        user.addAddress(address);
+
+//        user.removeAddress(address);
+
+        System.out.println(user);
 
 
 	}
