@@ -3,6 +3,9 @@ package com.learning.store.entities;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Entity
 @Table(name = "tags")
 @Getter
@@ -10,6 +13,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class Tag {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,4 +23,11 @@ public class Tag {
     @Column(nullable = false, name = "name")
     private String name;
 
+    @ManyToMany(mappedBy = "tags")
+    @ToString.Exclude
+    private Set<User> users = new HashSet<>();
+
+    public Tag(String name) {
+        this.name = name;
+    }
 }

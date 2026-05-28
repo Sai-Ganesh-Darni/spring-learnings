@@ -21,16 +21,8 @@ public class StoreApplication {
                 .password("pwd123")
                 .build();
 
-        var address = Address
-                .builder()
-                .city("city")
-                .state("state")
-                .zip("zip")
-                .street("street")
-                .build();
 
-        user.addAddress(address);
-
+        user.addTag("tag1");
 //        user.removeAddress(address);
 
         System.out.println(user);
