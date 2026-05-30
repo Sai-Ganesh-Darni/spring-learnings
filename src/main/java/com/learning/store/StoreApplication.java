@@ -39,7 +39,7 @@ public class StoreApplication {
 
         var userService = context.getBean(UserService.class);
         userService.showEntityStates();
-
+        userService.showRelatedEntities();
 
 
 
