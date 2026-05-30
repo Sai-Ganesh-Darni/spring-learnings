@@ -1,8 +1,12 @@
 package com.learning.store.entities;
 
 import jakarta.persistence.*;
+import lombok.Builder;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "products")
