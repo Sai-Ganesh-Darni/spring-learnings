@@ -2,6 +2,7 @@ package com.learning.store.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.time.LocalDate;
 
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@ToString
 public class Profile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,4 +32,9 @@ public class Profile {
     @Column(nullable = false, name = "loyalty_points")
     private Integer loyalty_points;
 
+    @OneToOne
+    @JoinColumn(name = "id")
+    @MapsId
+    @ToString.Exclude
+    private User user;
 }

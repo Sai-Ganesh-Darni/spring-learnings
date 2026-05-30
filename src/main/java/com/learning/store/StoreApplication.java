@@ -1,6 +1,7 @@
 package com.learning.store;
 
 import com.learning.store.entities.Address;
+import com.learning.store.entities.Profile;
 import com.learning.store.entities.User;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -22,8 +23,12 @@ public class StoreApplication {
                 .build();
 
 
-        user.addTag("tag1");
-//        user.removeAddress(address);
+        var profile = Profile.builder()
+                        .bio("Bio")
+                .build();
+        user.setProfile(profile);
+        profile.setUser(user);
+
 
         System.out.println(user);
 
