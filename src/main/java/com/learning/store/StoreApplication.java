@@ -38,9 +38,9 @@ public class StoreApplication {
 //        userRepository.deleteById(2L);
 
         var userService = context.getBean(UserService.class);
-        userService.showEntityStates();
-        userService.showRelatedEntities();
-
+//        userService.showEntityStates();
+//        userService.showRelatedEntities();
+            userService.getAddress();
 
 
 	}
