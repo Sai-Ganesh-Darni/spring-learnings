@@ -4,6 +4,7 @@ import com.learning.store.entities.Address;
 import com.learning.store.entities.Profile;
 import com.learning.store.entities.User;
 import com.learning.store.repositories.UserRepository;
+import com.learning.store.services.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
@@ -14,7 +15,7 @@ public class StoreApplication {
 
 	public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(StoreApplication.class, args);
-        var userRepository = context.getBean(UserRepository.class);
+//        var userRepository = context.getBean(UserRepository.class);
 //        User user = new User(1L, "Sai", "saiganesh@gmail.com", "pwd123");
 //        var user  = User
 //                .builder()
@@ -34,7 +35,10 @@ public class StoreApplication {
 //        user.setEmail("temp@gmail.com");
 //        userRepository.save(user);
 
-        userRepository.deleteById(2L);
+//        userRepository.deleteById(2L);
+
+        var userService = context.getBean(UserService.class);
+        userService.showEntityStates();
 
 
 
