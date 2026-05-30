@@ -26,9 +26,6 @@ public class Address {
     @Column(nullable = false, name = "zip")
     private String zip;
 
-    @Column(nullable = false, name = "user_id")
-    private Long user_id;
-
     @Column(nullable = false, name = "state")
     private String state;
 
