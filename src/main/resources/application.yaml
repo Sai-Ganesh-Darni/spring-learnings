@@ -2,19 +2,10 @@ spring:
   application:
     name: store
   datasource:
-    url: jdbc:mysql://localhost:3306/store?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/store_temp?createDatabaseIfNotExist=true
     username: root
     password: root
 
-
-stripe:
-  apiUrl: https://api.stripe.com
-  enabled: true
-  timeout: 1000
-  supported-currencies: IND,   USD, EUR
-
-payment-gateway: paypal
-
-user-service:
-  notification-service: email
-  user-repo: in-memory
+  jpa:
+    hibernate:
+      ddl-auto: create
