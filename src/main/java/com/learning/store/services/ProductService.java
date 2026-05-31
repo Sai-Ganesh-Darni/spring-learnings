@@ -1,6 +1,5 @@
 package com.learning.store.services;
 
-import com.learning.store.entities.Product;
 import com.learning.store.repositories.CategoryRepository;
 import com.learning.store.repositories.ProductRepository;
 import com.learning.store.repositories.UserRepository;
@@ -57,10 +56,16 @@ public class ProductService {
 
     }
 
+    @Transactional
     public void derviedQueries(){
-        var products = productRepository.findByName("Shampoo" +
-                "");
-        System.out.println(products.toString());
+//        var products = productRepository.findByName("Shampoo");
+//        var products = productRepository.findProducts(BigDecimal.valueOf(20L), BigDecimal.valueOf(30L));
+//        System.out.println(products.toString());
+
+//        System.out.println(productRepository.countOfProductsBetweenPrice(BigDecimal.valueOf(25L), BigDecimal.valueOf(30L)));
+
+        productRepository.updatePriceByCategory(BigDecimal.valueOf(25L), (byte) 2);
+
     }
 
 }
