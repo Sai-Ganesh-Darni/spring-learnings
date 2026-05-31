@@ -4,6 +4,7 @@ import com.learning.store.entities.Address;
 import com.learning.store.entities.Profile;
 import com.learning.store.entities.User;
 import com.learning.store.repositories.UserRepository;
+import com.learning.store.services.ProductService;
 import com.learning.store.services.UserService;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -37,12 +38,14 @@ public class StoreApplication {
 
 //        userRepository.deleteById(2L);
 
-        var userService = context.getBean(UserService.class);
+//        var userService = context.getBean(UserService.class);
 //        userService.showEntityStates();
 //        userService.showRelatedEntities();
 //            userService.getAddress();
 //        userService.persistRelated();
-        userService.deleteRelated();
+//        userService.deleteRelated();
+        var productService  = context.getBean(ProductService.class);
+        productService.createWishList();
 	}
 
 }
