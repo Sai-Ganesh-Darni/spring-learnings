@@ -46,8 +46,8 @@ public class StoreApplication {
 //        userService.deleteRelated();
         var productService  = context.getBean(ProductService.class);
 
-        productService.derviedQueries();
-
+//        productService.derviedQueries();
+        productService.getProducts();
 	}
 
 }

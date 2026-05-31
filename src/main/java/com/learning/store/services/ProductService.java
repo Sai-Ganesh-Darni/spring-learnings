@@ -1,5 +1,6 @@
 package com.learning.store.services;
 
+import com.learning.store.entities.Category;
 import com.learning.store.repositories.CategoryRepository;
 import com.learning.store.repositories.ProductRepository;
 import com.learning.store.repositories.UserRepository;
@@ -66,6 +67,11 @@ public class ProductService {
 
         productRepository.updatePriceByCategory(BigDecimal.valueOf(25L), (byte) 2);
 
+    }
+
+    public void getProducts(){
+        var products = productRepository.findProductByCategory(new Category((byte)2));
+        products.forEach(System.out::println);
     }
 
 }
