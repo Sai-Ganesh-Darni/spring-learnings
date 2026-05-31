@@ -1,5 +1,6 @@
 package com.learning.store.services;
 
+import com.learning.store.entities.Address;
 import com.learning.store.entities.User;
 import com.learning.store.repositories.AddressRepository;
 import com.learning.store.repositories.ProfileRepository;
@@ -51,4 +52,24 @@ public class UserService {
         var address = addressRepository.findById(1L);
         System.out.println(address);
     }
+
+    public void persistRelated(){
+        var user = User.builder()
+                .name("Anju")
+                .email("anju@gmail.com")
+                .password("pwd@123")
+                .build();
+
+        var address = Address.builder()
+                        .zip("zip")
+                                .state("state")
+                                        .street("street")
+                                                .city("city")
+                                                        .build();
+
+        user.addAddress(address);
+        userRepository.save(user);
+
+    }
+
 }
