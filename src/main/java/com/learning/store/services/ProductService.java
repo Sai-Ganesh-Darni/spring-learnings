@@ -57,4 +57,10 @@ public class ProductService {
 
     }
 
+    public void derviedQueries(){
+        var products = productRepository.findByName("Shampoo" +
+                "");
+        System.out.println(products.toString());
+    }
+
 }

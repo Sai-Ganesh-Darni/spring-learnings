@@ -45,7 +45,9 @@ public class StoreApplication {
 //        userService.persistRelated();
 //        userService.deleteRelated();
         var productService  = context.getBean(ProductService.class);
-        productService.createWishList();
+
+        productService.derviedQueries();
+
 	}
 
 }
