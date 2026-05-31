@@ -41,7 +41,8 @@ public class StoreApplication {
 //        userService.showEntityStates();
 //        userService.showRelatedEntities();
 //            userService.getAddress();
-        userService.persistRelated();
+//        userService.persistRelated();
+        userService.deleteRelated();
 	}
 
 }
